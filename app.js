@@ -1,5 +1,5 @@
 let drawnNumbersList = [];
-let limitNumber = 100;
+let limitNumber = 50;
 let secretNumber = generateRandomNumber();
 let attempts = 1;
 
@@ -11,15 +11,6 @@ function displayMessageOnScreen(tag, text) {
         responsiveVoice.speak(text, 'UK English Female', {rate: 1});
     } else {
         console.log("ResponsiveVoice is not available.");
-    }
-    if ('speechSynthesis' in window) {
-        let utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'pt-BR';
-        utterance.rate = 1.2;
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
-    } else {
-        console.log("Web Speech API is not supported in this browser.");
     }
 }
 
